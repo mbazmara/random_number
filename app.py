@@ -4,6 +4,11 @@ import random
 
 app = FastAPI()
 
+@app.get("/")
+def index():
+    return {"Creator": "Mohammad Bazmara"}
+
+
 @app.get("/random_number/")
 async def get_random_number(
     min_number: int = Query(..., title="Minimum Number", description="The minimum number in the range"),
